@@ -1,6 +1,6 @@
 {
-  "name": "doxiaodong-range-datetimepicker",
-  "version": "1.0.3",
+  "name": "yaojigntian-range-datetimepicker",
+  "version": "1.0.4",
   "main": [
     "bootstrap-datetimepicker/bootstrap-datetimepicker.css",
     "src/range-datetimepicker.css",
