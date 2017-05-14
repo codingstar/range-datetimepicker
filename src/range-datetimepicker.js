@@ -181,10 +181,10 @@
     });
 
     dom.select1.on("dp.change", function(e) {
-      minDate = e.date.startOf('day')
+      minDate = e.date
       dom.select2.data("DateTimePicker").minDate(minDate);
       if (exOptions.rangeLimit) {
-        maxDate = moment.min(moment().startOf('day'), moment(e.date).add(exOptions.rangeLimit.value, exOptions.rangeLimit.unit));
+        maxDate = moment.min(moment(), moment(e.date).add(exOptions.rangeLimit.value, exOptions.rangeLimit.unit));
         dom.select2.data("DateTimePicker").maxDate(maxDate);
       }
       dom.showDate.find('input.rangeDate1').val(e.date.format(options.format));
