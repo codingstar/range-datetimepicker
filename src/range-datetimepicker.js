@@ -182,21 +182,20 @@
 
     dom.select1.on("dp.change", function(e) {
       minDate = e.date.startOf('day')
+      dom.select2.data("DateTimePicker").minDate(minDate);
       if (exOptions.rangeLimit) {
         maxDate = moment.min(moment().startOf('day'), moment(e.date).add(exOptions.rangeLimit.value, exOptions.rangeLimit.unit));
         dom.select2.data("DateTimePicker").maxDate(maxDate);
       }
-      dom.select2.data("DateTimePicker").minDate(minDate);
-
       dom.showDate.find('input.rangeDate1').val(e.date.format(options.format));
     });
 
     dom.select2.on("dp.change", function(e) {
-      dom.select1.data("DateTimePicker").maxDate(e.date);
       if (exOptions.rangeLimit) {
-        minDate = moment(e.date).substract(exOptions.rangeLimit.value, exOptions.rangeLimit.unit);
+        minDate = moment(e.date).subtract(exOptions.rangeLimit.value, exOptions.rangeLimit.unit);
         dom.select1.data("DateTimePicker").minDate(minDate);
       }
+      dom.select1.data("DateTimePicker").maxDate(e.date);
       dom.showDate.find('input.rangeDate2').val(e.date.format(options.format));
     });
 
